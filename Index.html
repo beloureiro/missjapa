@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notion Widgets</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Estilos inline para carregamento inicial rápido -->
+    <style>
+        body {
+            background-color: #181818; /* Define cor de fundo para evitar flash branco */
+        }
+        .button_container {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            visibility: hidden; /* Esconde inicialmente os botões */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Container para os botões -->
+    <div class="button_container">
+        <!-- Links dos botões -->
+        <a id="button-0" class="button_link" href="https://wineex.today/chub/elx/menu" target="_blank" rel="noopener noreferrer">Wines</a>
+        <a id="button-1" class="button_link" href="https://wineex.today/chub/elx/menu-beverages" target="_blank" rel="noopener noreferrer">Beverages</a>
+        <a id="button-2" class="button_link" href="https://wineex.today/chub/elx/menu-food" target="_blank" rel="noopener noreferrer">Food</a>
+    </div>
+
+    <!-- Script para manipulação do DOM após o carregamento da página -->
+    <script>
+        window.onload = function() {
+            var links = document.querySelectorAll('.button_link');
+            links.forEach(function(link) {
+                link.target = "_parent";
+            });
+
+            // Revela os botões após o carregamento completo
+            document.querySelector('.button_container').style.visibility = 'visible';
+        };
+    </script>
+</body>
+
+</html>
