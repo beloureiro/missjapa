@@ -10,13 +10,13 @@
     <!-- Estilos inline para carregamento inicial rápido -->
     <style>
         body {
-            background-color: #181818; /* Define cor de fundo para evitar flash branco */
+            background-color: transparent; /* Torna o fundo da página transparente */
         }
         .button_container {
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-            visibility: hidden; /* Esconde inicialmente os botões */
+            display: flex; /* Utiliza Flexbox para alinhamento dos botões */
+            justify-content: space-evenly; /* Espaçamento uniforme entre os botões */
+            align-items: center; /* Centraliza os botões verticalmente */
+            visibility: hidden; /* Esconde inicialmente os botões para evitar exibição antes do carregamento */
         }
     </style>
 </head>
@@ -24,7 +24,7 @@
 <body>
     <!-- Container para os botões -->
     <div class="button_container">
-        <!-- Links dos botões -->
+        <!-- Links dos botões, utilize o href para adicionar os links desejados -->
         <a id="button-0" class="button_link" href="" target="_blank" rel="noopener noreferrer">Culinary Selections</a>
         <a id="button-1" class="button_link" href="" target="_blank" rel="noopener noreferrer">Cocktail & Beverage Selections</a>
     </div>
@@ -32,9 +32,9 @@
     <!-- Script para manipulação do DOM após o carregamento da página -->
     <script>
         window.onload = function() {
-            var links = document.querySelectorAll('.button_link');
+            var links = document.querySelectorAll('.button_link'); // Seleciona todos os elementos com a classe 'button_link'
             links.forEach(function(link) {
-                link.target = "_parent";
+                link.target = "_parent"; // Altera o target dos links para "_parent"
             });
 
             // Revela os botões após o carregamento completo
